@@ -1,5 +1,8 @@
-variable "vpc_cidr_block" {
-  default = "172.31.0.0/16"
+variable "VPC_id" {
+  description = "ID of the VPC"
+}
+variable "VPC_cidr" {
+  description = "VPC ipv4 cidr block"
 }
 variable "region" {
   default = "eu-central-1"
@@ -7,12 +10,12 @@ variable "region" {
 variable "availability_zone" {
   default = "eu-central-1a"
 }
-variable "subnet_cidr" {
-  default = "172.31.16.0/20"
+variable "subnet_id" {
+  description = "Subnet ID"
 }
 variable "ec2_data" {
   default = {
-    ami           = "ami-0d318f1f104612755"
-    instance_type = "t3.micro"
+    ami           = "ami-0bf8e703278ea0245"
+    instance_type = "t2.micro"
   }
 }

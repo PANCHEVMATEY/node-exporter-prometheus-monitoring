@@ -1,10 +1,10 @@
 resource "aws_security_group" "prometheus-sg" {
   name        = "Prometheus-sg"
   description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.aws-vpc.id
+  vpc_id      = data.aws_vpc.selected.id
 
   ingress {
-    description = "Alertmanager"
+    description = "Alert-manager"
     from_port   = 9093
     to_port     = 9093
     protocol    = "tcp"
@@ -21,6 +21,13 @@ resource "aws_security_group" "prometheus-sg" {
     description = "Node-exporter"
     from_port   = 9100
     to_port     = 9100
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    description = "SSH"
+    from_port   = 22
+    to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }

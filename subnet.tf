@@ -1,6 +1,6 @@
 resource "aws_subnet" "prometheus-subnet" {
-  vpc_id            = aws_vpc.aws-vpc.id
-  cidr_block        = var.subnet_cidr
+  vpc_id            = data.aws_vpc.selected.id
+  cidr_block        = data.aws_subnet.selected.cidr_block
   availability_zone = var.availability_zone
 
   tags = {
