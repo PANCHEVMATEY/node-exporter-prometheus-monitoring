@@ -1,3 +1,4 @@
+#Routing table and association to the IGW
 resource "aws_route_table" "routing-table-1" {
   vpc_id = data.aws_vpc.selected.id
 

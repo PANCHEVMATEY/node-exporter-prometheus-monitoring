@@ -1,3 +1,4 @@
+# Security group with rules for the prometheus and node exporter
 resource "aws_security_group" "prometheus-sg" {
   name        = "Prometheus-sg"
   description = "Allow TLS inbound traffic"

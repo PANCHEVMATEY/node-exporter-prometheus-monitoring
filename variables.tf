@@ -2,7 +2,7 @@ variable "VPC_id" {
   description = "ID of the VPC"
 }
 variable "VPC_cidr" {
-  description = "VPC ipv4 cidr block"
+  description = "VPC cidr block"
 }
 variable "region" {
   default = "eu-central-1"
@@ -10,8 +10,9 @@ variable "region" {
 variable "availability_zone" {
   default = "eu-central-1a"
 }
-variable "subnet_id" {
-  description = "Subnet ID"
+variable "subnet_cidr" {
+  description = "Cidr of the subnet"
+  default = "172.31.48.0/20"
 }
 variable "ec2_data" {
   default = {
